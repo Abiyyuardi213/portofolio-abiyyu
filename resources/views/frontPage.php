@@ -171,7 +171,148 @@
 
     <section id="about" class="container my-5 fade-in">
         <h2 class="section-title">Tentang Saya</h2>
-        <p class="text-center">Saya adalah seorang profesional di bidang IT dengan pengalaman lebih dari 5 tahun dalam pengembangan web dan analisis data. Saya memiliki passion untuk menciptakan solusi teknologi yang inovatif dan efisien.</p>
+        <div class="row">
+            <!-- Card untuk Informasi Pribadi -->
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary"><i class="fas fa-user me-2"></i>Informasi Pribadi</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <i class="fas fa-phone me-2 text-secondary"></i>
+                                <strong>Phone:</strong> +62 811 3017 176
+                            </li>
+                            <li class="mb-3">
+                                <i class="fab fa-whatsapp me-2 text-secondary"></i>
+                                <strong>WhatsApp:</strong> 0895 3970 43901
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-envelope me-2 text-secondary"></i>
+                                <strong>Email:</strong> abiyyuardilian213@gmail.com
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-map-marker-alt me-2 text-secondary"></i>
+                                <strong>Lokasi:</strong> Surabaya, Jawa Timur
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card untuk Deskripsi Diri -->
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary"><i class="fas fa-info-circle me-2"></i>Singkat tentang saya</h3>
+                        <p class="card-text">
+                            Hallo.. Nama lengkap saya R. Abiyyu Ardi Lian Permadi, sebagai sapaan akrab, saya sering dipanggil Abiyyu.
+                            Saya adalah anak kedua dari 3 bersaudara. Tempat tinggal saya untuk saat ini di Kota Surabaya, Jawa Timur.
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title text-primary"><i class="fas fa-info-circle me-2"></i>Deskripsi Diri</h3>
+                        <p class="card-text">
+                            Saya adalah mahasiswa Teknik Informatika dari Institut Teknologi Adhi Tama Surabaya atau lebih dikenal
+                            sebagai ITATS. Saat ini saya sedang menempuh perkuliahan di semester 4. Saya memiliki berbagai pengalaman
+                            kerja, namun saya masih mendalami dan memperbanyak pengalaman dibidang IT. Fokus karir saya saat ini adalah
+                            sebagai Web Developer Code Igniter & PHP Native, saya juga aktif sebagai Asisten Laboratorium di Kampus ITATS,
+                            serta aktif dalam kegiatan organisasi mahasiswa didalam lingkungan kampus ITATS. Untuk saat ini saya juga
+                            terlibat dalam proyek perusahaan tempat dimana saya bekerja, menjadikan saya agar terus berusaha mengembangkan
+                            diri dan memberikan kontribusi yang terbaik.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="container my-5 fade-in">
+        <h2 class="section-title">Pengalaman Kerja</h2>
+        <div class="row">
+            <!-- Card untuk Setiap Pengalaman Kerja -->
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary"><i class="fas fa-briefcase me-2"></i>Maintenance Technician</h3>
+                        <p class="text-muted"><i class="fas fa-building me-2"></i>PT. TPPI | Nov 2019 - Jan 2021</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Sebagai operator teknisi perpipaan</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Teknisi Legal Senior proyek pengeboran minyak</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Teknisi perpipaan tingkat 2 Distrik 44 laut jawa</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary"><i class="fas fa-briefcase me-2"></i>Drafter</h3>
+                        <p class="text-muted"><i class="fas fa-building me-2"></i>PT. Wijaya Karya | Mar 2021 - Des 2021</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Junior Drafter pada proyek pembangunan Hotel Integrated Soekarno-Hatta Airport</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Project Analysist pada proyek TOD Karawang</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Daily Drafter untuk beberapa proyek di Jawa Timur</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary"><i class="fas fa-briefcase me-2"></i>Public Relation</h3>
+                        <p class="text-muted"><i class="fas fa-building me-2"></i>PT. Kereta Api Indonesia | Mar 2022 - Sept 2022</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Pembicara rapat kerja tahunan PT. KAI</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Pembicara rapat kerja tahunan BUMN</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Pembicara agenda tahunan PT. KAI Daerah Operasi 8</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary"><i class="fas fa-briefcase me-2"></i>Operation Staff</h3>
+                        <p class="text-muted"><i class="fas fa-building me-2"></i>PT. Kereta Api Indonesia | Oct 2022 - Jun 2024</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Penyelia operasi UPT Crew KA Sidotopo</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Perancang Grafik Perjalanan KA Gapeka 2023</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary"><i class="fas fa-briefcase me-2"></i>Assistant Chief Operating Officer</h3>
+                        <p class="text-muted"><i class="fas fa-building me-2"></i>PT. Kereta Api Indonesia | Jun 2024 - Des 2024</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Asisten Kepala Operasional EVP Daop 8</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Perancang Grafik Perjalanan KA Gapeka 2025</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary"><i class="fas fa-briefcase me-2"></i>Web Developer & Front End Engineer</h3>
+                        <p class="text-muted"><i class="fas fa-building me-2"></i>PT. Kereta Api Indonesia | Des 2024 - Current</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Develop Sistem Manajemen Pegawai Daerah Operasi 8 (BACKEND)</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Develop Official Landing Page PT. KAI (FRONTEND)</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Develop Sistem Absensi Pegawai (BACKEND FRONTEND)</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Develop Sistem Keuangan (BACKEND FRONTEND)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="skills" class="container my-5 fade-in">
@@ -198,18 +339,6 @@
                     <p>AWS, Google Cloud, Docker</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="experience" class="container my-5 fade-in">
-        <h2 class="section-title">Pengalaman Kerja</h2>
-        <div class="card p-4">
-            <h3>Nama Pekerjaan</h3>
-            <p class="text-muted">Nama Perusahaan | Jan 2020 - Des 2022</p>
-            <ul>
-                <li>Deskripsi tanggung jawab dan pencapaian.</li>
-                <li>Deskripsi tanggung jawab dan pencapaian.</li>
-            </ul>
         </div>
     </section>
 

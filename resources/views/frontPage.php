@@ -57,7 +57,10 @@
             transition: background-color 0.3s ease;
         }
         .cta-button:hover {
-            background-color: #0056b3;
+            background-color: #28a745; /* Warna hijau */
+            color: white;
+            border-color: #28a745;
+            box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
         }
         .card {
             margin-bottom: 20px;
@@ -129,17 +132,16 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">MyPortofolio</a>
+            <a class="navbar-brand fw-bold" href="#">Abiyyu Ardilian Portofolio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Keterampilan</a></li>
                     <li class="nav-item"><a class="nav-link" href="#experience">Pengalaman</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Keterampilan</a></li>
                     <li class="nav-item"><a class="nav-link" href="#education">Pendidikan</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#organization">Organisasi</a></li>
                 </ul>
             </div>
         </div>
@@ -155,13 +157,13 @@
                 
                 <!-- Tambahkan ikon GitHub, LinkedIn, dan Instagram -->
                 <div class="social-icons mt-4">
-                    <a href="https://github.com/username" target="_blank" class="text-white me-3">
+                    <a href="https://github.com/Abiyyuardi213" target="_blank" class="text-white me-3">
                         <i class="fab fa-github fa-2x"></i> <!-- Ikon GitHub -->
                     </a>
-                    <a href="https://linkedin.com/in/username" target="_blank" class="text-white me-3">
+                    <a href="https://www.linkedin.com/in/abiyyu-ardilian-b87b42190/" target="_blank" class="text-white me-3">
                         <i class="fab fa-linkedin fa-2x"></i> <!-- Ikon LinkedIn -->
                     </a>
-                    <a href="https://instagram.com/username" target="_blank" class="text-white">
+                    <a href="https://www.instagram.com/rdnabiyyu/" target="_blank" class="text-white">
                         <i class="fab fa-instagram fa-2x"></i> <!-- Ikon Instagram -->
                     </a>
                 </div>
@@ -215,7 +217,7 @@
                             Saya adalah mahasiswa Teknik Informatika dari Institut Teknologi Adhi Tama Surabaya atau lebih dikenal
                             sebagai ITATS. Saat ini saya sedang menempuh perkuliahan di semester 4. Saya memiliki berbagai pengalaman
                             kerja, namun saya masih mendalami dan memperbanyak pengalaman dibidang IT. Fokus karir saya saat ini adalah
-                            sebagai Web Developer Code Igniter & PHP Native, saya juga aktif sebagai Asisten Laboratorium di Kampus ITATS,
+                            sebagai Web Developer Code Igniter, PHP Native dan juga Laravel, saya juga aktif sebagai Asisten Laboratorium di Kampus ITATS,
                             serta aktif dalam kegiatan organisasi mahasiswa didalam lingkungan kampus ITATS. Untuk saat ini saya juga
                             terlibat dalam proyek perusahaan tempat dimana saya bekerja, menjadikan saya agar terus berusaha mengembangkan
                             diri dan memberikan kontribusi yang terbaik.
@@ -301,7 +303,7 @@
             <div class="col-md-6 mb-4">
                 <div class="card h-100 shadow-sm">
                     <div class="card-body">
-                        <h3 class="card-title text-primary"><i class="fas fa-briefcase me-2"></i>Web Developer & Front End Engineer</h3>
+                        <h3 class="card-title text-primary"><i class="fas fa-briefcase me-2"></i>Web Developer & Front Dev</h3>
                         <p class="text-muted"><i class="fas fa-building me-2"></i>PT. Kereta Api Indonesia | Des 2024 - Current</p>
                         <ul class="list-unstyled">
                             <li><i class="fas fa-check-circle me-2 text-success"></i>Develop Sistem Manajemen Pegawai Daerah Operasi 8 (BACKEND)</li>
@@ -322,21 +324,21 @@
                 <div class="card p-4 text-center">
                     <i class="fas fa-code fa-3x mb-3" style="color: #007bff;"></i>
                     <h3>Web Development</h3>
-                    <p>HTML, CSS, JavaScript, React, Node.js</p>
+                    <p>HTML, CSS, JavaScript</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card p-4 text-center">
-                    <i class="fas fa-database fa-3x mb-3" style="color: #007bff;"></i>
-                    <h3>Data Analysis</h3>
-                    <p>Python, SQL, Pandas, Tableau</p>
+                    <i class="fas fa-cogs fa-3x mb-3" style="color: #007bff;"></i>
+                    <h3>Backend Development</h3>
+                    <p>Laravel, Code Igniter, PHP Native</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card p-4 text-center">
-                    <i class="fas fa-cloud fa-3x mb-3" style="color: #007bff;"></i>
-                    <h3>Cloud Computing</h3>
-                    <p>AWS, Google Cloud, Docker</p>
+                    <i class="fas fa-chart-line fa-3x mb-3" style="color: #007bff;"></i>
+                    <h3>Management</h3>
+                    <p>Word, Excel, Power Point</p>
                 </div>
             </div>
         </div>
@@ -345,28 +347,65 @@
     <section id="education" class="container my-5 fade-in">
         <h2 class="section-title">Pengalaman Pendidikan</h2>
         <div class="card p-4">
-            <h3>Nama Universitas</h3>
-            <p class="text-muted">Gelar | 2014 - 2018</p>
+            <h3>SMK Negeri 3 Surabaya</h3>
+            <p class="text-muted">Teknik Gambar Bangunan | 2016 - 2019</p>
             <ul>
-                <li>Deskripsi kegiatan atau pencapaian selama pendidikan.</li>
+                <li>Wakil Ketua OSIS periode 2017-2018</li>
+                <li>Juara 2 Nasional Lomba Kreatifitas Siswa (LKS) bidang Konstruksi dan Properti</li>
+                <li>Sertifikasi Drafter kelas 2 oleh BNSP</li>
+            </ul>
+        </div>
+
+        <div class="card p-4">
+            <h3>Insititut Teknologi Adhi Tama Surabaya</h3>
+            <p class="text-muted">Teknik Informatika | 2023 - Sekarang</p>
+            <ul>
+                <li>Asisten Laboratorium Rekayasa Perangkat Lunak</li>
+                <li>Anggota divisi Kewirausahaan Himpunan Mahasiswa Teknik Informatika</li>
+                <li>Wakil Ketua Himpunan Mahasiswa Teknik Informatika</li>
+                <li>Tata Usaha (CSR) Bidang Akademik WR 1</li>
             </ul>
         </div>
     </section>
 
-    <section id="organization" class="container my-5 fade-in">
-        <h2 class="section-title">Pengalaman Organisasi</h2>
-        <div class="card p-4">
-            <h3>Nama Organisasi</h3>
-            <p class="text-muted">Posisi | Tahun</p>
-            <ul>
-                <li>Deskripsi kegiatan atau pencapaian selama organisasi.</li>
-            </ul>
+    <section class="bg-light py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">💡 Berikan Saran Anda</h2>
+                <p class="text-muted">Kami senang mendengar ide, kritik, atau masukan Anda untuk pengembangan lebih baik.</p>
+            </div>
+
+            <div class="card shadow-lg mx-auto" style="max-width: 700px;">
+                <div class="card-body p-4">
+                    <form action="/kirim-saran" method="POST">
+                        <!-- Tambahkan @csrf jika di Laravel -->
+                        <div class="mb-3">
+                            <label for="nama" class="form-label fw-semibold">Nama Lengkap</label>
+                            <input type="text" class="form-control rounded-pill px-4 py-2" id="nama" name="nama" placeholder="Contoh: Abiyyu Ardilian" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label fw-semibold">Alamat Email</label>
+                            <input type="email" class="form-control rounded-pill px-4 py-2" id="email" name="email" placeholder="nama@email.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pesan" class="form-label fw-semibold">Masukan atau Saran</label>
+                            <textarea class="form-control rounded-4 px-4 py-3" id="pesan" name="pesan" rows="5" placeholder="Tulis masukan Anda di sini..." required></textarea>
+                        </div>
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-primary px-5 py-2 rounded-pill shadow-sm">Kirim</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer class="text-center py-4 bg-dark text-white">
-        <p>&copy; 2023 Nama Lengkap. All rights reserved.</p>
+        <p>&copy; 2023 Abiyyu Ardilian. All rights reserved.</p>
     </footer>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
     <script>
         const fadeIns = document.querySelectorAll('.fade-in');

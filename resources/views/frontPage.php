@@ -78,9 +78,38 @@
             color: var(--text-primary);
             text-decoration: none;
             transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-brand-icon {
+            font-family: 'Courier New', monospace;
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--accent-color);
         }
 
         .nav-brand:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-brand:hover .nav-brand-icon {
+            transform: rotate(180deg);
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .hamburger:hover {
             color: var(--accent-color);
         }
 
@@ -141,6 +170,10 @@
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
+        }
+
+        .hero-image {
+            order: -1;
         }
 
         .hero-content h1 {
@@ -224,19 +257,107 @@
             transform: translateY(-4px);
         }
 
+        /* Image Slider Styles */
         .hero-image {
+            position: relative;
             width: 100%;
             max-width: 400px;
             height: 400px;
             border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
             background: linear-gradient(135deg, var(--accent-color), #00d4ff);
+        }
+
+        .slider-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 16px;
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+
+        .slider-item {
+            min-width: 100%;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 1rem;
+            background-color: var(--card-bg);
+        }
+
+        .slider-item img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            overflow: hidden;
+        }
+
+        .slider-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 10;
+        }
+
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .slider-dot.active {
+            background-color: white;
+            width: 30px;
+            border-radius: 5px;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.3);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 9;
+        }
+
+        .slider-arrow:hover {
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .slider-arrow.prev {
+            left: 15px;
+        }
+
+        .slider-arrow.next {
+            right: 15px;
         }
 
         /* Sections */
@@ -328,6 +449,29 @@
             flex-shrink: 0;
         }
 
+        /* Company Logo Styles */
+        .company-logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            background-color: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--accent-color);
+            font-weight: 700;
+            border: 2px solid var(--accent-color);
+        }
+
+        .company-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 8px;
+        }
+
         /* Skills Section */
         .skills-grid {
             display: grid;
@@ -349,10 +493,6 @@
             color: white;
             border-color: var(--accent-color);
             transform: translateY(-4px);
-        }
-
-        .skill-box:hover .skill-icon {
-            color: white;
         }
 
         .skill-icon {
@@ -420,6 +560,106 @@
             font-size: 0.8rem;
         }
 
+        /* Portfolio Section Styles */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .portfolio-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--card-shadow-hover);
+            border-color: var(--accent-color);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent-color), #00d4ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-card:hover .portfolio-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .portfolio-overlay i {
+            color: white;
+            font-size: 2rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-card:hover .portfolio-overlay i {
+            opacity: 1;
+        }
+
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+
+        .portfolio-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .portfolio-content p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--bg-secondary);
+            color: var(--accent-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
         /* Contact Form Section */
         .contact-section {
             background-color: var(--bg-secondary);
@@ -481,30 +721,89 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .nav-container {
+                padding: 1rem 1.5rem;
+                flex-wrap: wrap;
+            }
+
+            .nav-menu {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: var(--bg-primary);
+                border-bottom: 1px solid var(--border-color);
+                flex-direction: column;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                width: 100%;
+                padding: 0;
+                align-items: stretch;
+                z-index: 999;
+            }
+
+            .nav-menu.active {
+                max-height: 500px;
+                padding: 1rem 0;
+            }
+
+            .nav-menu li {
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .nav-menu li:last-child {
+                border-bottom: none;
+            }
+
+            .nav-link {
+                display: block;
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .theme-toggle {
+                width: 100%;
+                border-radius: 0;
+                border: none;
+                border-top: 1px solid var(--border-color);
+                height: auto;
+                padding: 1rem 1.5rem;
+                justify-content: flex-start;
+                gap: 1rem;
+            }
+
+            .theme-toggle::before {
+                content: attr(data-label);
+                font-size: 1rem;
+                font-weight: 500;
+                color: var(--text-secondary);
+            }
+
+            .nav-menu.active .theme-toggle {
+                background-color: var(--bg-secondary);
+            }
+
             .hero-container {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
 
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
             .hero-image {
+                order: 0;
                 max-width: 100%;
                 height: 300px;
             }
 
-            .nav-menu {
-                gap: 1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .cards-grid {
-                grid-template-columns: 1fr;
+            .hero-content h1 {
+                font-size: 2.5rem;
             }
 
             .hero-buttons {
@@ -514,6 +813,18 @@
             .btn {
                 width: 100%;
                 justify-content: center;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
             }
         }
 
@@ -547,13 +858,20 @@
     <!-- Navbar -->
     <nav>
         <div class="nav-container">
-            <a href="#" class="nav-brand">Abiyyu Ardilian</a>
-            <ul class="nav-menu">
+            <a href="#" class="nav-brand">
+                <span class="nav-brand-icon">&lt;/&gt;</span>
+                <span>Abiyyu Dev</span>
+            </a>
+            <button class="hamburger" id="hamburgerMenu" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="#about" class="nav-link">Tentang</a></li>
                 <li><a href="#experience" class="nav-link">Pengalaman</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
                 <li><a href="#skills" class="nav-link">Keterampilan</a></li>
                 <li><a href="#education" class="nav-link">Pendidikan</a></li>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" data-label="Toggle Dark Mode">
                     <i class="fas fa-moon"></i>
                 </button>
             </ul>
@@ -563,6 +881,26 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
+            <div class="hero-image">
+                <div class="slider-container">
+                    <div class="slider-wrapper">
+                        <div class="slider-track" id="sliderTrack">
+                            <div class="slider-item">
+                                <img src="/public/image/profile1.jpg" alt="Profile Picture 1">
+                            </div>
+                            <div class="slider-item">
+                                <img src="/public/image/profile2.jpg" alt="Profile Picture 2">
+                            </div>
+                            <div class="slider-item">
+                                <img src="/public/images/profile-3.jpg" alt="Profile Picture 3">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider-arrow prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="slider-arrow next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                    <div class="slider-controls" id="sliderControls"></div>
+                </div>
+            </div>
             <div class="hero-content">
                 <h1>R. Abiyyu Ardi Lian P</h1>
                 <p>IT Support & Web Developer yang passionate dalam menciptakan solusi digital yang inovatif</p>
@@ -583,9 +921,6 @@
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>
-            </div>
-            <div class="hero-image">
-                <img src="/public/image/2025_02_12_14_32_IMG_3512.jpg" alt="Profile Picture" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
         </div>
     </section>
@@ -615,7 +950,11 @@
     <section id="experience">
         <h2 class="section-title">Pengalaman Kerja</h2>
         <div class="cards-grid">
+            <!-- Added company logo to experience cards -->
             <div class="card fade-in delay-1">
+                <div class="company-logo">
+                    <img src="/public/image/tppi.png" alt="PT. TPPI Logo">
+                </div>
                 <h3><i class="fas fa-briefcase"></i> Maintenance Technician</h3>
                 <div class="card-meta"><i class="fas fa-building"></i> PT. TPPI | Nov 2019 - Jan 2021</div>
                 <ul class="card-list">
@@ -625,6 +964,9 @@
                 </ul>
             </div>
             <div class="card fade-in delay-2">
+                <div class="company-logo">
+                    <img src="/public/image/wika.png" alt="PT. Wijaya Karya Logo">
+                </div>
                 <h3><i class="fas fa-briefcase"></i> Drafter</h3>
                 <div class="card-meta"><i class="fas fa-building"></i> PT. Wijaya Karya | Mar 2021 - Des 2021</div>
                 <ul class="card-list">
@@ -634,6 +976,9 @@
                 </ul>
             </div>
             <div class="card fade-in delay-3">
+                <div class="company-logo">
+                    <img src="/public/image/kai.png" alt="PT. KAI Logo">
+                </div>
                 <h3><i class="fas fa-briefcase"></i> Public Relation</h3>
                 <div class="card-meta"><i class="fas fa-building"></i> PT. KAI | Mar 2022 - Sept 2022</div>
                 <ul class="card-list">
@@ -643,6 +988,9 @@
                 </ul>
             </div>
             <div class="card fade-in delay-1">
+                <div class="company-logo">
+                    <img src="/public/image/kai.png" alt="PT. KAI Logo">
+                </div>
                 <h3><i class="fas fa-briefcase"></i> Operation Staff</h3>
                 <div class="card-meta"><i class="fas fa-building"></i> PT. KAI | Oct 2022 - Jun 2024</div>
                 <ul class="card-list">
@@ -651,6 +999,9 @@
                 </ul>
             </div>
             <div class="card fade-in delay-2">
+                <div class="company-logo">
+                    <img src="/public/image/kai.png" alt="PT. KAI Logo">
+                </div>
                 <h3><i class="fas fa-briefcase"></i> Assistant Chief Operating Officer</h3>
                 <div class="card-meta"><i class="fas fa-building"></i> PT. KAI | Jun 2024 - Des 2024</div>
                 <ul class="card-list">
@@ -659,13 +1010,168 @@
                 </ul>
             </div>
             <div class="card fade-in delay-3">
+                <div class="company-logo">
+                    <img src="/public/image/kai.png" alt="PT. KAI Logo">
+                </div>
                 <h3><i class="fas fa-briefcase"></i> Web Developer & Front Dev</h3>
-                <div class="card-meta"><i class="fas fa-building"></i> PT. KAI | Des 2024 - Current</div>
+                <div class="card-meta"><i class="fas fa-building"></i> PT. KAI | Des 2024 - April 2025</div>
                 <ul class="card-list">
                     <li><i class="fas fa-check"></i> Develop Sistem Manajemen Pegawai Daop 8</li>
                     <li><i class="fas fa-check"></i> Develop Official Landing Page PT. KAI</li>
                     <li><i class="fas fa-check"></i> Develop Sistem Absensi & Keuangan</li>
                 </ul>
+            </div>
+            <div class="card fade-in delay-3">
+                <div class="company-logo">
+                    <img src="/public/image/itats.png" alt="PT. KAI Logo">
+                </div>
+                <h3><i class="fas fa-briefcase"></i> Administration & Web Dev</h3>
+                <div class="card-meta"><i class="fas fa-building"></i> ITATS | Sept 2024 - Current</div>
+                <ul class="card-list">
+                    <li><i class="fas fa-check"></i> Frontliner Administration</li>
+                    <li><i class="fas fa-check"></i> Develop Sistem Peminjaman Ruangan</li>
+                </ul>
+            </div>
+            <div class="card fade-in delay-3">
+                <div class="company-logo">
+                    <img src="/public/image/gfi.png" alt="PT. KAI Logo">
+                </div>
+                <h3><i class="fas fa-briefcase"></i> Fullstack Programmer (Remote)</h3>
+                <div class="card-meta"><i class="fas fa-building"></i> ITATS | May 2025 - Current</div>
+                <ul class="card-list">
+                    <li><i class="fas fa-check"></i> Develop Sistem Informasi Manajemen Logistik</li>
+                    <li><i class="fas fa-check"></i> Develop Sistem Manajemen Pegawai</li>
+                    <li><i class="fas fa-check"></i> Develop Sistem Manajemen Keuangan</li>
+                </ul>
+            </div>
+            <div class="card fade-in delay-3">
+                <div class="company-logo">
+                    <img src="/public/image/kai.png" alt="PT. KAI Logo">
+                </div>
+                <h3><i class="fas fa-briefcase"></i> IT Project Manager</h3>
+                <div class="card-meta"><i class="fas fa-building"></i> PT. KAI | April 2025 - July 2025</div>
+                <ul class="card-list">
+                    <li><i class="fas fa-check"></i> Lead Team for Develop E-Recruitment KAI</li>
+                </ul>
+            </div>
+            <div class="card fade-in delay-3">
+                <div class="company-logo">
+                    <img src="/public/image/kai.png" alt="PT. KAI Logo">
+                </div>
+                <h3><i class="fas fa-briefcase"></i> Head of Planning and Development Division</h3>
+                <div class="card-meta"><i class="fas fa-building"></i> PT. KAI | July 2025 - Current</div>
+                <ul class="card-list">
+                    <li><i class="fas fa-check"></i> Lead Team for Develop E-Recruitment KAI</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2 class="section-title">Portfolio Project</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-card fade-in delay-1">
+                <div class="portfolio-image">
+                    <img src="/public/images/project-1.jpg" alt="Project 1 - Employee Management System">
+                    <div class="portfolio-overlay">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Employee Management System</h3>
+                    <p>Sistem manajemen pegawai terintegrasi untuk PT. KAI Daop 8 dengan fitur attendance dan payroll.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">Bootstrap</span>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-card fade-in delay-2">
+                <div class="portfolio-image">
+                    <img src="/public/images/project-2.jpg" alt="Project 2 - PT. KAI Landing Page">
+                    <div class="portfolio-overlay">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3>PT. KAI Official Landing Page</h3>
+                    <p>Landing page modern dan responsive untuk meningkatkan brand awareness PT. Kereta Api Indonesia.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-card fade-in delay-3">
+                <div class="portfolio-image">
+                    <img src="/public/images/project-3.jpg" alt="Project 3 - Attendance & Finance System">
+                    <div class="portfolio-overlay">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Attendance & Finance System</h3>
+                    <p>Sistem terintegrasi untuk pencatatan absensi dan manajemen keuangan karyawan real-time.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">Code Igniter</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">jQuery</span>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-card fade-in delay-1">
+                <div class="portfolio-image">
+                    <img src="/public/images/project-4.jpg" alt="Project 4 - Railway Schedule Dashboard">
+                    <div class="portfolio-overlay">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Railway Schedule Dashboard</h3>
+                    <p>Dashboard interaktif untuk visualisasi dan pengelolaan jadwal kereta api dengan grafik real-time.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">Chart.js</span>
+                        <span class="tag">PHP Native</span>
+                        <span class="tag">PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-card fade-in delay-2">
+                <div class="portfolio-image">
+                    <img src="/public/images/project-5.jpg" alt="Project 5 - Architectural Drafting Software">
+                    <div class="portfolio-overlay">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Architectural Drafting Tools</h3>
+                    <p>Tools dan utilities untuk membantu proses drafting dan design arsitektur proyek pembangunan.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">AutoCAD</span>
+                        <span class="tag">Revit</span>
+                        <span class="tag">Design</span>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-card fade-in delay-3">
+                <div class="portfolio-image">
+                    <img src="/public/images/project-6.jpg" alt="Project 6 - IT Support Portal">
+                    <div class="portfolio-overlay">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3>IT Support Portal</h3>
+                    <p>Portal dukungan IT dengan ticketing system untuk mengelola dan menyelesaikan support requests.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">Bootstrap</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -747,11 +1253,57 @@
     </footer>
 
     <script>
+        const sliderTrack = document.getElementById('sliderTrack');
+        const sliderControls = document.getElementById('sliderControls');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slider-item');
+        const totalSlides = slides.length;
+
+        // Create slider dots
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('button');
+            dot.classList.add('slider-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            sliderControls.appendChild(dot);
+        }
+
+        const dots = document.querySelectorAll('.slider-dot');
+
+        function updateSlider() {
+            sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Auto-slide every 5 seconds
+        setInterval(nextSlide, 5000);
+
         // Dark Mode Toggle
         const themeToggle = document.getElementById('themeToggle');
         const html = document.documentElement;
 
-        // Check for saved theme preference or default to 'light'
         const currentTheme = localStorage.getItem('theme') || 'light';
         if (currentTheme === 'dark') {
             html.classList.add('dark-mode');
@@ -779,7 +1331,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.card, .skill-box, .education-item').forEach(el => {
+        document.querySelectorAll('.card, .skill-box, .education-item, .portfolio-card').forEach(el => {
             observer.observe(el);
         });
 
@@ -791,6 +1343,25 @@
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth' });
                 }
+            });
+        });
+
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburgerMenu');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
             });
         });
     </script>
